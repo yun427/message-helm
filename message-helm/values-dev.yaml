@@ -1,12 +1,9 @@
 # Development environment values
 replicaCount: 1
-
 image:
-  tag: "dev-v143"
-
+  tag: "dev-v145"
 service:
   nodePort: 30001
-
 resources:
   limits:
     cpu: 250m
@@ -14,6 +11,5 @@ resources:
   requests:
     cpu: 125m
     memory: 128Mi
-
 namespace:
   name: message-server-dev
