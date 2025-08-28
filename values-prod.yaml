@@ -1,0 +1,19 @@
+# Production environment values
+replicaCount: 2
+
+image:
+  tag: "v144"
+
+service:
+  nodePort: 30003
+
+resources:
+  limits:
+    cpu: 250m
+    memory: 256Mi
+  requests:
+    cpu: 125m
+    memory: 128Mi
+
+namespace:
+  name: message-server-prod

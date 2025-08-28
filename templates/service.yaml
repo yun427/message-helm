@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "message-server.fullname" . }}-service
+  namespace: {{ include "message-server.namespace" . }}
+  labels:
+    {{- include "message-server.labels" . | nindent 4 }}
+    app: {{ include "message-server.name" . }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.targetPort }}
+      {{- if eq .Values.service.type "NodePort" }}
+      nodePort: {{ .Values.service.nodePort }}
+      {{- end }}
+  selector:
+    {{- include "message-server.selectorLabels" . | nindent 4 }}
