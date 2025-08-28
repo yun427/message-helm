@@ -1,10 +1,7 @@
 replicaCount: 1
-
 image:
-  tag: "staging-v142"
-
+  tag: "staging-v146"
 service:
   nodePort: 30002
-
 namespace:
   name: message-server-staging
