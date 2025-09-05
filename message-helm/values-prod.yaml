@@ -1,5 +1,5 @@
 # Production environment values
-replicaCount: 2
+replicaCount: 1
 image:
   tag: "v147"
 service:
